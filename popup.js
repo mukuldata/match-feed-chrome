@@ -19,11 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.querySelector(".close");
     const favouriteButton = document.getElementById("favouriteButton");
   
-    const apiUrl = "http://localhost:3000/api/matches";
+    const apiUrl = "https://api.cricapi.com/v1/currentMatches?apikey=eb72965c-5521-49ea-8130-7f38918d1764&offset=0";
   
     // Load cached matches if available
     function loadCachedMatches() {
     
+      console.log("Inside loadCachedMatches");
       const cachedData = localStorage.getItem("matches");
       return cachedData ? JSON.parse(cachedData) : null;
     }
@@ -80,12 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
              console.log("Show cache data");
              matchData=cache_data
 
-          }
-          else{
+          }  else{
             const response = await fetch(apiUrl);
              matchData = await response.json();
+             console.log("matchData",matchData);
             cacheMatches(matchData);
           }
+        }
+        else{
+          const response = await fetch(apiUrl);
+           matchData = await response.json();
+          cacheMatches(matchData);
         }
 
 
