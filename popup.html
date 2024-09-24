@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+
+  
+
+  
+
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <!-- Live Matches Only Checkbox -->
+    <label class="checkbox-container">
+      <input type="checkbox" id="liveOnly">
+      Show Live Matches Only
+    </label>
+
+    <!-- Favourites Only Checkbox -->
+    <label class="checkbox-container">
+      <input type="checkbox" id="favouritesOnly">
+      Show Favourites Only
+    </label>
+
+    <!-- Match Type Selection -->
+    <label for="matchTypeSelect" class="filter-label">Filter by Match Type:</label>
+    <select id="matchTypeSelect">
+      <option value="all">All Matches</option>
+      <option value="test">TEST</option>
+      <option value="odi">ODI</option>
+      <option value="t20">T20</option>
+    </select>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <div class="toggle-section">
+    <label class="checkbox-container">
+      <input type="checkbox" id="darkModeToggle">
+      Dark Mode
+    </label>
+  </div>
+
+  <!-- Share Match Details Button -->
+  <div class="button-section">
+    <button id="shareMatchDetails">Share Match Details</button>
+  </div>
+
+  <!-- Refresh Matches Button -->
+  <div class="button-section">
+    <button id="refresh">Refresh Matches</button>
+  </div>
+
+
+  <div id="loader">
+    <div class="lds-spinner">
+      <div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div>
+      <img src="icons/bat.png" alt="Loading" class="loading-image">
+    </div>
+    <span class="loading" id="loading-text">Loading Matches ...</span>
+  </div>
+
+  <!-- Matches Container -->
+  <div id="matches"></div>
+
+  <!-- Modal for Detailed Match View -->
+  <div id="matchModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2 id="modalTitle">Match Details</h2>
+      <div id="modalDetails"></div>
+      <button id="favouriteButton">Add to Favourites</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
