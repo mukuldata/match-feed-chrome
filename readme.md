@@ -1,5 +1,8 @@
 # Chrome Extension: Live Cricket Match Tracker(MatchFeed)
 
+### Download Chrome Extension from link : https://drive.google.com/drive/folders/1n3-Mp5EemiQRRIohYHDpwt_9X11RC0Ck?usp=sharing
+Follow steps of installation given below.
+
 ## Overview
 
 MatchFeed is a Chrome extension that provides users with real-time information about ongoing cricket matches. Users can view details about the matches, filter their view, and store their favorite matches locally for quick access.
